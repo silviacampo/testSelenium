@@ -7,16 +7,15 @@ using WatiN.Core;
 
 namespace testgossip.Watin
 {
+    //Only run in FF2 to 3.6
     //[TestClass]
     public class HomeFireFoxTest
     {
         private FireFox browser;
 
-        #region Firefox
-
         #region "HOME PAGES LOAD"
 
-        [TestMethod]
+        //[TestMethod]
         public void TestGSHomeLoad()
         {
             browser = new FireFox();
@@ -31,7 +30,7 @@ namespace testgossip.Watin
             }
         }
 
-        [TestMethod]
+        //[TestMethod]
         public void TestGSMHomeLoad()
         {
             browser = new FireFox();
@@ -46,7 +45,7 @@ namespace testgossip.Watin
             }
         }
 
-        [TestMethod]
+        //[TestMethod]
         public void TestGDHomeLoad()
         {
             browser = new FireFox();
@@ -61,7 +60,7 @@ namespace testgossip.Watin
             }
         }
 
-        [TestMethod]
+        //[TestMethod]
         public void TestGDMHomeLoad()
         {
             browser = new FireFox();
@@ -76,7 +75,7 @@ namespace testgossip.Watin
             }
         }
 
-        [TestMethod]
+        //[TestMethod]
         public void TestGOHomeLoad()
         {
             browser = new FireFox();
@@ -91,7 +90,7 @@ namespace testgossip.Watin
             }
         }
 
-        [TestMethod]
+        //[TestMethod]
         public void TestGOMHomeLoad()
         {
             browser = new FireFox();
@@ -110,7 +109,7 @@ namespace testgossip.Watin
 
         #region "HOME PAGES TITLES ARE OK"
 
-        [TestMethod]
+        //[TestMethod]
         public void TestGSHomeTitleLoad()
         {
             browser = new FireFox();
@@ -125,7 +124,7 @@ namespace testgossip.Watin
             }
         }
 
-        [TestMethod]
+        //[TestMethod]
         public void TestGSMHomeTitleLoad()
         {
             browser = new FireFox();
@@ -140,7 +139,7 @@ namespace testgossip.Watin
             }
         }
 
-        [TestMethod]
+        //[TestMethod]
         public void TestGDHomeTitleLoad()
         {
             browser = new FireFox();
@@ -155,7 +154,7 @@ namespace testgossip.Watin
             }
         }
 
-        [TestMethod]
+        //[TestMethod]
         public void TestGDMHomeTitleLoad()
         {
             browser = new FireFox();
@@ -170,7 +169,7 @@ namespace testgossip.Watin
             }
         }
 
-        [TestMethod]
+        //[TestMethod]
         public void TestGOHomeTitleLoad()
         {
             browser = new FireFox();
@@ -185,7 +184,7 @@ namespace testgossip.Watin
             }
         }
 
-        [TestMethod]
+        //[TestMethod]
         public void TestGOMHomeTitleLoad()
         {
             browser = new FireFox();
@@ -204,7 +203,7 @@ namespace testgossip.Watin
 
         #region "HOME PAGES HEADER TEXT ARE OK"
 
-        [TestMethod]
+        //[TestMethod]
         public void TestGSHomeHeaderTextLoad()
         {
             browser = new FireFox();
@@ -220,7 +219,7 @@ namespace testgossip.Watin
             }
         }
 
-        [TestMethod]
+        //[TestMethod]
         public void TestGSMHomeHeaderTextLoad()
         {
             browser = new FireFox();
@@ -236,7 +235,7 @@ namespace testgossip.Watin
             }
         }
 
-        [TestMethod]
+        //[TestMethod]
         public void TestGDHomeHeaderTextLoad()
         {
             browser = new FireFox();
@@ -252,7 +251,7 @@ namespace testgossip.Watin
             }
         }
 
-        [TestMethod]
+        //[TestMethod]
         public void TestGDMHomeHeaderTextLoad()
         {
             browser = new FireFox();
@@ -268,7 +267,7 @@ namespace testgossip.Watin
             }
         }
 
-        [TestMethod]
+        //[TestMethod]
         public void TestGOHomeHeaderTextLoad()
         {
             browser = new FireFox();
@@ -284,7 +283,7 @@ namespace testgossip.Watin
             }
         }
 
-        [TestMethod]
+        //[TestMethod]
         public void TestGOMHomeHeaderBGImageLoad()
         {
             browser = new FireFox();
@@ -302,8 +301,5 @@ namespace testgossip.Watin
 
         #endregion
 
-        #endregion
-
- 
-    }
+     }
 }

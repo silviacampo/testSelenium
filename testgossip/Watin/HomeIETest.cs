@@ -13,98 +13,42 @@ namespace testgossip.Watin
     {
         private IE browser;
  
-        #region IE
-
         #region "HOME PAGES LOAD"
 
         [TestMethod]
         public void TestGSHomeLoad()
         {
-            browser = new IE();
-            try
-            {
-                browser.GoTo(Constants.GSWebHost);
-                Assert.AreEqual(browser.Url, Constants.GSWebHost);
-            }
-            finally
-            {
-                browser.Close();
-            }
+            Assert.IsTrue(WatinIEUtils.TestLoad(browser, Constants.GSWebHost));
         }
 
         [TestMethod]
         public void TestGSMHomeLoad()
         {
-            browser = new IE();
-            try
-            {
-                browser.GoTo(Constants.GSMobileWebHost);
-                Assert.AreEqual(browser.Url, Constants.GSMobileWebHost);
-            }
-            finally
-            {
-                browser.Close();
-            }
+            Assert.IsTrue(WatinIEUtils.TestLoad(browser, Constants.GSMobileWebHost));
         }
 
         [TestMethod]
         public void TestGDHomeLoad()
         {
-            browser = new IE();
-            try
-            {
-                browser.GoTo(Constants.GDWebHost);
-                Assert.AreEqual(browser.Url, Constants.GDWebHost);
-            }
-            finally
-            {
-                browser.Close();
-            }
+            Assert.IsTrue(WatinIEUtils.TestLoad(browser, Constants.GDWebHost));
         }
 
         [TestMethod]
         public void TestGDMHomeLoad()
         {
-            browser = new IE();
-            try
-            {
-                browser.GoTo(Constants.GDMobileWebHost);
-                Assert.AreEqual(browser.Url, Constants.GDMobileWebHost);
-            }
-            finally
-            {
-                browser.Close();
-            }
+            Assert.IsTrue(WatinIEUtils.TestLoad(browser, Constants.GDMobileWebHost));
         }
 
         [TestMethod]
         public void TestGOHomeLoad()
         {
-            browser = new IE();
-            try
-            {
-                browser.GoTo(Constants.GOWebHost);
-                Assert.AreEqual(browser.Url, Constants.GOWebHost);
-            }
-            finally
-            {
-                browser.Close();
-            }
+            Assert.IsTrue(WatinIEUtils.TestLoad(browser, Constants.GOWebHost));
         }
 
         [TestMethod]
         public void TestGOMHomeLoad()
         {
-            browser = new IE();
-            try
-            {
-                browser.GoTo(Constants.GOMobileWebHost);
-                Assert.AreEqual(browser.Url, Constants.GOMobileWebHost);
-            }
-            finally
-            {
-                browser.Close();
-            }
+            Assert.IsTrue(WatinIEUtils.TestLoad(browser, Constants.GOMobileWebHost));
         }
 
         #endregion
@@ -114,91 +58,37 @@ namespace testgossip.Watin
         [TestMethod]
         public void TestGSHomeTitleLoad()
         {
-            browser = new IE();
-            try
-            {
-                browser.GoTo(Constants.GSWebHost);
-                Assert.IsTrue(browser.Title.Contains(Constants.GSWebHostTitle));
-            }
-            finally
-            {
-                browser.Close();
-            }
+            Assert.IsTrue(WatinIEUtils.TestTitleLoad(browser, Constants.GSWebHost, Constants.GSWebHostTitle));
         }
 
         [TestMethod]
         public void TestGSMHomeTitleLoad()
         {
-            browser = new IE();
-            try
-            {
-                browser.GoTo(Constants.GSMobileWebHost);
-                Assert.IsTrue(browser.Title.Contains(Constants.GSMobileWebHostTitle));
-            }
-           finally
-            {
-                browser.Close();
-            }
+            Assert.IsTrue(WatinIEUtils.TestTitleLoad(browser, Constants.GSMobileWebHost, Constants.GSMobileWebHostTitle));
         }
 
         [TestMethod]
         public void TestGDHomeTitleLoad()
         {
-            browser = new IE();
-            try
-            {
-                browser.GoTo(Constants.GDWebHost);
-                Assert.IsTrue(browser.Title.Contains(Constants.GDWebHostTitle));
-            }
-            finally
-            {
-                browser.Close();
-            }
+            Assert.IsTrue(WatinIEUtils.TestTitleLoad(browser, Constants.GDWebHost, Constants.GDWebHostTitle));
         }
 
         [TestMethod]
         public void TestGDMHomeTitleLoad()
         {
-            browser = new IE();
-            try
-            {
-                browser.GoTo(Constants.GDMobileWebHost);
-                Assert.IsTrue(browser.Title.Contains(Constants.GDMobileWebHostTitle));
-            }
-            finally
-            {
-                browser.Close();
-            }
+            Assert.IsTrue(WatinIEUtils.TestTitleLoad(browser, Constants.GDMobileWebHost, Constants.GDMobileWebHostTitle));
         }
 
         [TestMethod]
         public void TestGOHomeTitleLoad()
         {
-            browser = new IE();
-            try
-            {
-                browser.GoTo(Constants.GOWebHost);
-                Assert.IsTrue(browser.Title.Contains(Constants.GOWebHostTitle));
-            }
-            finally
-            {
-                browser.Close();
-            }
+            Assert.IsTrue(WatinIEUtils.TestTitleLoad(browser, Constants.GOWebHost, Constants.GOWebHostTitle));
         }
 
         [TestMethod]
         public void TestGOMHomeTitleLoad()
         {
-            browser = new IE();
-            try
-            {
-                browser.GoTo(Constants.GOMobileWebHost);
-                Assert.IsTrue(browser.Title.Contains(Constants.GOMobileWebHostTitle));
-            }
-            finally
-            {
-                browser.Close();
-            }
+            Assert.IsTrue(WatinIEUtils.TestTitleLoad(browser, Constants.GOMobileWebHost, Constants.GOMobileWebHostTitle));
         }
 
         #endregion
@@ -208,102 +98,79 @@ namespace testgossip.Watin
         [TestMethod]
         public void TestGSHomeHeaderTextLoad()
         {
-            browser = new IE();
-            try
-            {
-                browser.GoTo(Constants.GSWebHost);
-                string GossipTitleContent = browser.Div(Find.ById("GossipTitle")).InnerHtml;
-                Assert.AreEqual(GossipTitleContent, Constants.GSWebHostTitle);
-            }
-            finally
-            {
-                browser.Close();
-            }
+            Assert.IsTrue(WatinIEUtils.TestHeaderTextLoad(browser, Constants.GSWebHost, Constants.GSWebHostTitle));
         }
 
         [TestMethod]
         public void TestGSMHomeHeaderTextLoad()
         {
-            browser = new IE();
-            try
-            {
-                browser.GoTo(Constants.GSMobileWebHost);
-                string GossipTitleContent = browser.Div(Find.ById("GossipTitle")).InnerHtml;
-                Assert.AreEqual(GossipTitleContent, Constants.GSMobileWebHostTitle);
-            }
-            finally
-            {
-                browser.Close();
-            }
+            Assert.IsTrue(WatinIEUtils.TestHeaderTextLoad(browser, Constants.GSMobileWebHost, Constants.GSMobileWebHostTitle));
         }
 
         [TestMethod]
         public void TestGDHomeHeaderTextLoad()
         {
-            browser = new IE();
-            try
-            {
-                browser.GoTo(Constants.GDWebHost);
-                string GossipTitleContent = browser.Div(Find.ById("GossipTitle")).InnerHtml;
-                Assert.AreEqual(GossipTitleContent, Constants.GDWebHostTitle);
-            }
-            finally
-            {
-                browser.Close();
-            }
+            Assert.IsTrue(WatinIEUtils.TestHeaderTextLoad(browser, Constants.GDWebHost, Constants.GDWebHostTitle));
         }
 
         [TestMethod]
         public void TestGDMHomeHeaderTextLoad()
         {
-            browser = new IE();
-            try
-            {
-                browser.GoTo(Constants.GDMobileWebHost);
-                string GossipTitleContent = browser.Div(Find.ById("GossipTitle")).InnerHtml;
-                Assert.AreEqual(GossipTitleContent, Constants.GDMobileWebHostTitle);
-            }
-            finally
-            {
-                browser.Close();
-            }
+            Assert.IsTrue(WatinIEUtils.TestHeaderTextLoad(browser, Constants.GDMobileWebHost, Constants.GDMobileWebHostTitle));
         }
 
         [TestMethod]
         public void TestGOHomeHeaderTextLoad()
         {
-            browser = new IE();
-            try
-            {
-                browser.GoTo(Constants.GOWebHost);
-                string GossipTitleContent = browser.Div(Find.ById("GossipTitle")).InnerHtml;
-                Assert.AreEqual(GossipTitleContent, Constants.GOWebHostTitle);
-            }
-            finally
-            {
-                browser.Close();
-            }
+            Assert.IsTrue(WatinIEUtils.TestHeaderTextLoad(browser, Constants.GOWebHost, Constants.GOWebHostTitle));
         }
 
         [TestMethod]
-        public void TestGOMHomeHeaderBGImageLoad()
+        public void TestGOMHomeHeaderTextLoad()
         {
-            browser = new IE();
-            try
-            {
-                browser.GoTo(Constants.GOMobileWebHost);
-                string GossipTitleContent = browser.Div(Find.ById("GossipTitle")).InnerHtml;
-                Assert.AreEqual(GossipTitleContent, Constants.GOMobileWebHostTitle);
-            }
-            finally
-            {
-                browser.Close();
-            }
+            Assert.IsTrue(WatinIEUtils.TestHeaderTextLoad(browser, Constants.GOMobileWebHost, Constants.GOMobileWebHostTitle));
         }
 
         #endregion
-       
+
+        #region "HOME PAGES MENU COLORS ARE OK"
+
+        [TestMethod]
+        public void TestGSHomeMenuColorsLoad()
+        {
+            Assert.IsTrue(WatinIEUtils.TestMenuColorsLoad(browser, Constants.GSWebHost, Layout.GSleftMenuFColor, Layout.GSleftMenuBColor));
+        }
+
+        //[TestMethod]
+        public void TestGSMHomeMenuColorsLoad()
+        {
+            Assert.IsTrue(WatinIEUtils.TestMenuColorsLoad(browser, Constants.GSMobileWebHost, Layout.GSleftMenuFColor, Layout.GSleftMenuBColor));
+        }
+
+        [TestMethod]
+        public void TestGDHomeMenuColorsLoad()
+        {
+            Assert.IsTrue(WatinIEUtils.TestMenuColorsLoad(browser, Constants.GDWebHost, Layout.GDleftMenuFColor, Layout.GDleftMenuBColor));
+        }
+
+        //[TestMethod]
+        public void TestGDMHomeMenuColorsLoad()
+        {
+            Assert.IsTrue(WatinIEUtils.TestMenuColorsLoad(browser, Constants.GDMobileWebHost, Layout.GDleftMenuFColor, Layout.GDleftMenuBColor));
+        }
+
+        [TestMethod]
+        public void TestGOHomeMenuColorsLoad()
+        {
+            Assert.IsTrue(WatinIEUtils.TestMenuColorsLoad(browser, Constants.GOWebHost, Layout.GOleftMenuFColor, Layout.GOleftMenuBColor));
+        }
+
+        //[TestMethod]
+        public void TestGOMHomeMenuColorsLoad()
+        {
+            Assert.IsTrue(WatinIEUtils.TestMenuColorsLoad(browser, Constants.GOMobileWebHost, Layout.GOleftMenuFColor, Layout.GOleftMenuBColor));
+        }
+
         #endregion
- 
     }
 }
