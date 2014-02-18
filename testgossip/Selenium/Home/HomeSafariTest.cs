@@ -4,52 +4,52 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Firefox;
+using OpenQA.Selenium.Safari;
 
 
 namespace testgossip.Selenium
 {
     [TestClass]
-    public class HomeFireFoxTest
+    public class HomeSafariTest
     {
-        private FirefoxDriver browser;
+        private SafariDriver browser;
 
         #region "HOME PAGES LOAD"
 
         [TestMethod]
         public void TestGSHomeLoad()
         {
-            SeleniumUtils.FireFoxTestLoad(browser, Constants.GSWebHost);
+            SeleniumSafariUtils.TestLoad(browser, Constants.GSWebHost);
         }
 
         [TestMethod]
         public void TestGSMHomeLoad()
         {
-            SeleniumUtils.FireFoxTestLoad(browser, Constants.GSMobileWebHost);
+            SeleniumSafariUtils.TestLoad(browser, Constants.GSMobileWebHost);
         }
 
         [TestMethod]
         public void TestGDHomeLoad()
         {
-            SeleniumUtils.FireFoxTestLoad(browser, Constants.GDWebHost);
+            SeleniumSafariUtils.TestLoad(browser, Constants.GDWebHost);
         }
 
         [TestMethod]
         public void TestGDMHomeLoad()
         {
-            SeleniumUtils.FireFoxTestLoad(browser, Constants.GDMobileWebHost);
+            SeleniumSafariUtils.TestLoad(browser, Constants.GDMobileWebHost);
         }
 
         [TestMethod]
         public void TestGOHomeLoad()
         {
-            SeleniumUtils.FireFoxTestLoad(browser, Constants.GOWebHost);
+            SeleniumSafariUtils.TestLoad(browser, Constants.GOWebHost);
         }
 
         [TestMethod]
         public void TestGOMHomeLoad()
         {
-            SeleniumUtils.FireFoxTestLoad(browser, Constants.GOMobileWebHost);
+            SeleniumSafariUtils.TestLoad(browser, Constants.GOMobileWebHost);
         }
         #endregion
 

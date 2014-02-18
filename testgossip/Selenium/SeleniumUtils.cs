@@ -3,10 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Firefox;
-using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Safari;
-using OpenQA.Selenium.Android;
 using OpenQA.Selenium.Remote;
 
 
@@ -35,36 +31,7 @@ namespace testgossip
             browser.Navigate().GoToUrl(webPage);
            return browser.Url.ToString().Equals(webPage);
         }
-
-        public static bool FireFoxTestLoad(FirefoxDriver browser, string webPage) {
-            bool result = false;
-            browser = new FirefoxDriver();
-            try
-            {
-                result = TestLoad(browser, webPage);
-            }
-            finally
-            {
-                browser.Quit();
-            }
-            return result;
-        }
-
-        public static bool ChromeTestLoad(ChromeDriver browser, string webPage)
-        {
-            bool result = false;
-            browser = new ChromeDriver();
-            try
-            {
-                result = TestLoad(browser, webPage);
-            }
-            finally
-            {
-                browser.Quit();
-            }
-            return result;
-        }
-
+ 
         public static bool TestTitleLoad(RemoteWebDriver browser, string webPage, string webPageTitle)
         {
             browser.Navigate().GoToUrl(webPage);

@@ -66,8 +66,13 @@
   <ItemGroup>
     <Compile Include="Constants.cs" />
     <Compile Include="Layout.cs" />
+    <Compile Include="Selenium\Home\HomeChromeTest.cs" />
+    <Compile Include="Selenium\Home\HomeSafariTest.cs" />
+    <Compile Include="Selenium\SeleniumChromeUtils.cs" />
+    <Compile Include="Selenium\SeleniumSafariUtils.cs" />
+    <Compile Include="Selenium\SeleniumFireFoxUtils.cs" />
     <Compile Include="Selenium\SeleniumUtils.cs" />
-    <Compile Include="Selenium\HomeFireFoxTest.cs" />
+    <Compile Include="Selenium\Home\HomeFireFoxTest.cs" />
     <Compile Include="Watin\WatinIEUtils.cs" />
     <Compile Include="Watin\HomeFireFoxTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
