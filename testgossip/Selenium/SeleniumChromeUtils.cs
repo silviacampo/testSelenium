@@ -13,7 +13,8 @@ namespace testgossip.Selenium
         public static bool TestLoad(ChromeDriver browser, string webPage)
         {
             bool result = false;
-            browser = new ChromeDriver();
+
+            browser = new ChromeDriver(@"C:\chromedriver_win32");
             try
             {
                 result = SeleniumUtils.TestLoad(browser, webPage);
@@ -28,7 +29,7 @@ namespace testgossip.Selenium
         public static bool TestTitleLoad(ChromeDriver browser, string webPage, string webPageTitle)
         {
             bool result = false;
-            browser = new ChromeDriver();
+            browser = new ChromeDriver(@"C:\chromedriver_win32");
             try
             {
                 result = SeleniumUtils.TestTitleLoad(browser, webPage, webPageTitle);
@@ -43,7 +44,7 @@ namespace testgossip.Selenium
         public static bool TestHeaderTextLoad(ChromeDriver browser, string webPage, string webPageTitle)
         {
             bool result = false;
-            browser = new ChromeDriver();
+            browser = new ChromeDriver(@"C:\chromedriver_win32");
             try
             {
                 result = SeleniumUtils.TestHeaderTextLoad(browser, webPage, webPageTitle);
@@ -58,7 +59,7 @@ namespace testgossip.Selenium
         public static bool TestMenuColorsLoad(ChromeDriver browser, string webPage, string color, string bgcolor)
         {
             bool result = false;
-            browser = new ChromeDriver();
+            browser = new ChromeDriver(@"C:\chromedriver_win32");
             try
             {
                 result = SeleniumUtils.TestMenuColorsLoad(browser, webPage, color, bgcolor);
