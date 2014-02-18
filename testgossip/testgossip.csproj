@@ -66,8 +66,9 @@
   <ItemGroup>
     <Compile Include="Constants.cs" />
     <Compile Include="Layout.cs" />
+    <Compile Include="Selenium\SeleniumUtils.cs" />
     <Compile Include="Selenium\HomeFireFoxTest.cs" />
-    <Compile Include="WatinIEUtils.cs" />
+    <Compile Include="Watin\WatinIEUtils.cs" />
     <Compile Include="Watin\HomeFireFoxTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Watin\HomeIETest.cs" />

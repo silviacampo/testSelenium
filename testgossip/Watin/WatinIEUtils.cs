@@ -8,14 +8,14 @@ namespace testgossip
 {
     class WatinIEUtils
     {
-        public static bool TestLoad(IE browser, string webHost)
+        public static bool TestLoad(IE browser, string webPage)
         {
             bool result = false;
             browser = new IE();
             try
             {
-                browser.GoTo(Constants.GSWebHost);
-                result = browser.Url.Equals(Constants.GSWebHost);
+                browser.GoTo(webPage);
+                result = browser.Url.Equals(webPage);
             }
             finally
             {
@@ -24,14 +24,14 @@ namespace testgossip
             return result;
         }
 
-        public static bool TestTitleLoad(IE browser, string webHost, string webHostTitle)
+        public static bool TestTitleLoad(IE browser, string webPage, string webPageTitle)
         {
             bool result = false;
             browser = new IE();
             try
             {
-                browser.GoTo(webHost);
-                result = browser.Title.Contains(webHostTitle);
+                browser.GoTo(webPage);
+                result = browser.Title.Contains(webPageTitle);
             }
             finally
             {
@@ -40,15 +40,15 @@ namespace testgossip
             return result;
         }
 
-        public static bool TestHeaderTextLoad(IE browser, string webHost, string webHostTitle)
+        public static bool TestHeaderTextLoad(IE browser, string webPage, string webPageTitle)
         {
             bool result = false;
             browser = new IE();
             try
             {
-                browser.GoTo(webHost);
+                browser.GoTo(webPage);
                 string GossipTitleContent = browser.Div(Find.ById(Layout.gossipTitleDiv)).InnerHtml;
-                result = GossipTitleContent.Equals(webHostTitle);
+                result = GossipTitleContent.Equals(webPageTitle);
             }
             finally
             {
@@ -57,15 +57,16 @@ namespace testgossip
             return result;
         }
 
-        public static bool TestMenuColorsLoad(IE browser, string webHost,HtmlColor color, HtmlColor bcolor)
+        public static bool TestMenuColorsLoad(IE browser, string webPage,HtmlColor color, HtmlColor bcolor)
         {
             bool result = false;
             browser = new IE();
             try
             {
-                browser.GoTo(webHost);
+                browser.GoTo(webPage);
                 Style menuStyle = browser.Div(Find.ById(Layout.leftMenuDiv)).Style;
-                HtmlColor menuColor = menuStyle.Color;
+                Style menuLinkStyle = browser.Div(Find.ById(Layout.leftMenuDiv)).Links[0].Style;
+                HtmlColor menuColor = menuLinkStyle.Color;                
                 HtmlColor menuBackColor = menuStyle.BackgroundColor;
                 result = menuColor.Equals(color) && menuBackColor.Equals(bcolor);
             }
