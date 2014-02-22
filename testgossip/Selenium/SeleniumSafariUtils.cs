@@ -38,13 +38,13 @@ namespace testgossip.Selenium
             return result;
         }
 
-        public static bool TestHeaderTextLoad(SafariDriver browser, string webPage, string webPageTitle)
+        public static bool TestHeaderTextLoad(SafariDriver browser, string webPage, string webPageTitleImage)
         {
             bool result = false;
             browser = new SafariDriver();
             try
             {
-                result = SeleniumUtils.TestHeaderTextLoad(browser, webPage, webPageTitle);
+                result = SeleniumUtils.TestHeaderTextLoad(browser, webPage, webPageTitleImage);
             }
             finally
             {

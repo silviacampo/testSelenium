@@ -41,13 +41,13 @@ namespace testgossip.Selenium
             return result;
         }
 
-        public static bool TestHeaderTextLoad(ChromeDriver browser, string webPage, string webPageTitle)
+        public static bool TestHeaderTextLoad(ChromeDriver browser, string webPage, string webPageTitleImage)
         {
             bool result = false;
             browser = new ChromeDriver(@"C:\chromedriver_win32");
             try
             {
-                result = SeleniumUtils.TestHeaderTextLoad(browser, webPage, webPageTitle);
+                result = SeleniumUtils.TestHeaderTextLoad(browser, webPage, webPageTitleImage);
             }
             finally
             {

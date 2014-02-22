@@ -45,6 +45,7 @@
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
+    <Reference Include="System.Drawing" />
     <Reference Include="ThoughtWorks.Selenium.Core">
       <HintPath>..\..\..\SeleniumTest\selenium-dotnet-2.39.0\net40\ThoughtWorks.Selenium.Core.dll</HintPath>
     </Reference>
@@ -74,11 +75,22 @@
     <Compile Include="Selenium\SeleniumUtils.cs" />
     <Compile Include="Selenium\Home\HomeFireFoxTest.cs" />
     <Compile Include="Watin\WatinIEUtils.cs" />
-    <Compile Include="Watin\HomeFireFoxTest.cs" />
+    <Compile Include="Watin\Home\HomeFireFoxTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Watin\HomeIETest.cs" />
+    <Compile Include="Watin\Home\HomeIETest.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Selenium\AboutUs\" />
+    <Folder Include="Selenium\ContactUs\" />
+    <Folder Include="Selenium\FAQ\" />
+    <Folder Include="Selenium\PrivacyPolicy\" />
+    <Folder Include="Selenium\TermsConditions\" />
+    <Folder Include="Watin\AboutUs\" />
+    <Folder Include="Watin\ContactUs\" />
+    <Folder Include="Watin\FAQ\" />
+    <Folder Include="Watin\PrivacyPolicy\" />
+    <Folder Include="Watin\TermsConditions\" />
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

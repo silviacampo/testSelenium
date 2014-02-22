@@ -38,18 +38,21 @@ namespace testgossip
             return browser.Title.Contains(webPageTitle);
         }
 
-        public static bool TestHeaderTextLoad(RemoteWebDriver browser, string webPage, string webPageTitle)
+        public static bool TestHeaderTextLoad(RemoteWebDriver browser, string webPage, string webPageTitleImage)
         {
             browser.Navigate().GoToUrl(webPage);
-            string GossipTitleContent = browser.FindElement(By.Id(Layout.gossipTitleDiv)).Text;
-                return GossipTitleContent.Equals(webPageTitle);
+            IWebElement titleImage = browser.FindElement(By.Id(Layout.gossipTitleImg));
+            string GossipTitleImage = titleImage.GetCssValue("background-image");
+                return GossipTitleImage.Contains(webPageTitleImage);
         }
 
         public static bool TestMenuColorsLoad(RemoteWebDriver browser, string webPage, string color, string bcolor)
         {
                 browser.Navigate().GoToUrl(webPage);
-                string BGColor = browser.FindElement(By.Id(Layout.leftMenuDiv)).GetCssValue("background");
-                string Color = browser.FindElement(By.Id(Layout.leftMenuDiv)).FindElements(By.TagName("a"))[0].GetCssValue("color");
+                IWebElement leftmenuDiv = browser.FindElement(By.Id(Layout.leftMenuDiv));
+                string BGColor = leftmenuDiv.GetCssValue("background-color");
+                IWebElement leftmenuLink = leftmenuDiv.FindElements(By.TagName("a"))[0];
+                string Color = leftmenuLink.GetCssValue("color");
                 return Color.Equals(color) && BGColor.Equals(bcolor);
         }
     }
