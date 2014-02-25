@@ -135,11 +135,12 @@ namespace testgossip.Selenium
 
         //#region "HOME PAGES MENU COLORS ARE OK"
 
-        //[TestMethod]
-        //public void TestGSHomeMenuColorsLoad()
-        //{
-        //    Assert.IsTrue(SeleniumFireFoxUtils.TestMenuColorsLoad(browser, Constants.GSWebHost, Layout.GSleftMenuFColor.ToRgbString, Layout.GSleftMenuBColor.ToRgbString));
-        //}
+        [TestMethod]
+        public void TestGSHomeMenuColorsLoad()
+        {
+            string message;
+            Assert.IsTrue(SeleniumFireFoxUtils.TestMenuColorsLoad(browser, Constants.GSWebHost, Layout.GSleftMenuFColor.ToRgbString, Layout.GSleftMenuBColor.ToRgbString, out message), message);
+        }
 
         ////[TestMethod]
         //public void TestGSMHomeMenuColorsLoad()

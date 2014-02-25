@@ -67,6 +67,7 @@
   <ItemGroup>
     <Compile Include="Constants.cs" />
     <Compile Include="Layout.cs" />
+    <Compile Include="Login.cs" />
     <Compile Include="Selenium\Home\HomeChromeTest.cs" />
     <Compile Include="Selenium\Home\HomeSafariTest.cs" />
     <Compile Include="Selenium\SeleniumChromeUtils.cs" />
@@ -74,6 +75,8 @@
     <Compile Include="Selenium\SeleniumFireFoxUtils.cs" />
     <Compile Include="Selenium\SeleniumUtils.cs" />
     <Compile Include="Selenium\Home\HomeFireFoxTest.cs" />
+    <Compile Include="SignUp.cs" />
+    <Compile Include="Watin\Login\IETest.cs" />
     <Compile Include="Watin\WatinIEUtils.cs" />
     <Compile Include="Watin\Home\HomeFireFoxTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -83,12 +86,15 @@
     <Folder Include="Selenium\AboutUs\" />
     <Folder Include="Selenium\ContactUs\" />
     <Folder Include="Selenium\FAQ\" />
+    <Folder Include="Selenium\Login\" />
     <Folder Include="Selenium\PrivacyPolicy\" />
+    <Folder Include="Selenium\SignUp\" />
     <Folder Include="Selenium\TermsConditions\" />
     <Folder Include="Watin\AboutUs\" />
     <Folder Include="Watin\ContactUs\" />
     <Folder Include="Watin\FAQ\" />
     <Folder Include="Watin\PrivacyPolicy\" />
+    <Folder Include="Watin\SignUp\" />
     <Folder Include="Watin\TermsConditions\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

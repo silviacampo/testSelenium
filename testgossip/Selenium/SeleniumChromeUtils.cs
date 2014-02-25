@@ -56,13 +56,13 @@ namespace testgossip.Selenium
             return result;
         }
 
-        public static bool TestMenuColorsLoad(ChromeDriver browser, string webPage, string color, string bgcolor)
+        public static bool TestMenuColorsLoad(ChromeDriver browser, string webPage, string color, string bgcolor, out string message)
         {
             bool result = false;
             browser = new ChromeDriver(@"C:\chromedriver_win32");
             try
             {
-                result = SeleniumUtils.TestMenuColorsLoad(browser, webPage, color, bgcolor);
+                result = SeleniumUtils.TestMenuColorsLoad(browser, webPage, color, bgcolor, out message);
             }
             finally
             {

@@ -46,13 +46,14 @@ namespace testgossip
                 return GossipTitleImage.Contains(webPageTitleImage);
         }
 
-        public static bool TestMenuColorsLoad(RemoteWebDriver browser, string webPage, string color, string bcolor)
+        public static bool TestMenuColorsLoad(RemoteWebDriver browser, string webPage, string color, string bcolor, out string message)
         {
                 browser.Navigate().GoToUrl(webPage);
                 IWebElement leftmenuDiv = browser.FindElement(By.Id(Layout.leftMenuDiv));
                 string BGColor = leftmenuDiv.GetCssValue("background-color");
                 IWebElement leftmenuLink = leftmenuDiv.FindElements(By.TagName("a"))[0];
                 string Color = leftmenuLink.GetCssValue("color");
+            message = "The color " +  Color + " is equal to " + color + " and the backgroundColor " + BGColor + " is equals to " + bcolor;
                 return Color.Equals(color) && BGColor.Equals(bcolor);
         }
     }

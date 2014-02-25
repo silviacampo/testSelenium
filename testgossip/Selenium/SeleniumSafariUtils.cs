@@ -53,13 +53,13 @@ namespace testgossip.Selenium
             return result;
         }
 
-        public static bool TestMenuColorsLoad(SafariDriver browser, string webPage, string color, string bgcolor)
+        public static bool TestMenuColorsLoad(SafariDriver browser, string webPage, string color, string bgcolor, out string message)
         {
             bool result = false;
             browser = new SafariDriver();
             try
             {
-                result = SeleniumUtils.TestMenuColorsLoad(browser, webPage, color, bgcolor);
+                result = SeleniumUtils.TestMenuColorsLoad(browser, webPage, color, bgcolor, out message);
             }
             finally
             {

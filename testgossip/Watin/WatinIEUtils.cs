@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using WatiN.Core;
+using System.Threading;
 
 namespace testgossip
 {
@@ -76,5 +77,109 @@ namespace testgossip
             }
             return result;
         }
+
+        public static bool TestEmptyLogin(IE browser, string webPage, out string message)
+        {
+            bool result = true;
+            message = "";
+            browser = new IE();
+            try
+            {
+                browser.GoTo(webPage);
+                browser.Button(Find.ByClass("formbutton")).Click();
+                if (browser.Child(Find.ByClass("ErrorMessage")) == null)
+                {
+                    message = "Error message not displayed";
+                    return false;
+                }
+
+
+                browser.GoTo(webPage);
+                browser.Div(Find.ById("ajaxMessage")).NextSibling.NextSibling.Click();
+                Thread.Sleep(1000);
+                if (browser.Div(Find.ById("ajaxMessage")).InnerHtml == null)
+                {
+                    message = "Ajax error message not displayed";
+                    return false;
+                }
+            }
+            finally
+            {
+                browser.Close();
+            }
+            return result;
+        }
+
+        public static bool TestInvalidLogin(IE browser, string webPage, out string message)
+        {
+            bool result = true;
+            message = "";
+            browser = new IE();
+            try
+            {
+                browser.GoTo(webPage);
+                browser.TextField(Find.ById(Login.UsernameInputText)).TypeText("12");
+                browser.TextField(Find.ById(Login.PasswordInputText)).TypeText("3456"); 
+                browser.Button(Find.ByClass("formbutton")).Click();
+                if (browser.Child(Find.ByClass("ErrorMessage")) == null)
+                {
+                    message = "Error message not displayed";
+                    return false;
+                }
+
+
+                browser.GoTo(webPage);
+                browser.TextField(Find.ById(Login.ForgotPasswordEmailInputText)).TypeText("123456"); 
+                browser.Div(Find.ById("ajaxMessage")).NextSibling.NextSibling.Click();
+                Thread.Sleep(1000);
+                if (browser.Div(Find.ById("ajaxMessage")).InnerHtml == null)
+                {
+                    message = "Ajax error message not displayed";
+                    return false;
+                }
+            }
+            finally
+            {
+                browser.Close();
+            }
+            return result;
+        }
+
+        public static bool TestInexistantLogin(IE browser, string webPage, out string message)
+        {
+            bool result = true;
+            message = "";
+            browser = new IE();
+            try
+            {
+                browser.GoTo(webPage);
+                browser.TextField(Find.ById(Login.UsernameInputText)).TypeText("sssssss");
+                browser.TextField(Find.ById(Login.PasswordInputText)).TypeText("ppppppppp");
+                browser.Button(Find.ByClass("formbutton")).Click();
+                if (browser.Child(Find.ByClass("ErrorMessage")) == null)
+                {
+                    message = "Error message not displayed";
+                    return false;
+                }
+
+
+                browser.GoTo(webPage);
+                browser.TextField(Find.ById(Login.ForgotPasswordEmailInputText)).TypeText("eeee@eeeeee.com");
+                browser.Div(Find.ById("ajaxMessage")).NextSibling.NextSibling.Click();
+                Thread.Sleep(1000);
+                if (browser.Div(Find.ById("ajaxMessage")).InnerHtml == null)
+                {
+                    message = "Ajax error message not displayed";
+                    return false;
+                }
+            }
+            finally
+            {
+                browser.Close();
+            }
+            return result;
+        }
+
     }
+
 }
