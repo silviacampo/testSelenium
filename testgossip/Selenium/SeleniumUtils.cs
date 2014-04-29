@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Remote;
+using System.Threading;
 
 
 
@@ -56,5 +57,90 @@ namespace testgossip
             message = "The color " +  Color + " is equal to " + color + " and the backgroundColor " + BGColor + " is equals to " + bcolor;
                 return Color.Equals(color) && BGColor.Equals(bcolor);
         }
+
+        public static bool TestEmptyLogin(RemoteWebDriver browser, string webPage, out string message)
+        {
+            bool result = true;
+            message = "";
+
+                browser.Navigate().GoToUrl(webPage);
+                browser.FindElementByClassName("formbutton").Submit();
+                if (browser.FindElementByClassName("ErrorMessage") == null)
+                {
+                    message = "Error message not displayed";
+                    return false;
+                }
+
+
+                browser.Navigate().GoToUrl(webPage);
+                browser.FindElement(By.XPath("//div[@id='" + Login.ForgotPasswordAjaxMessageDiv + "']/following-sibling::button[last()]")).Submit();
+                Thread.Sleep(1000);
+                if (browser.FindElementById(Login.ForgotPasswordAjaxMessageDiv).GetAttribute("innerHTML") == String.Empty)
+                {
+                    message = "Ajax error message not displayed";
+                    return false;
+                }
+
+            return result;
+        }
+
+        public static bool TestInvalidLogin(RemoteWebDriver browser, string webPage, out string message)
+        {
+            bool result = true;
+            message = "";
+            browser.Navigate().GoToUrl(webPage);
+                //browser.TextField(Find.ById(Login.UsernameInputText)).TypeText("12");
+                //browser.TextField(Find.ById(Login.PasswordInputText)).TypeText("3456");
+                //browser.Button(Find.ByClass("formbutton")).Click();
+                //if (browser.Child(Find.ByClass("ErrorMessage")) == null)
+                //{
+                //    message = "Error message not displayed";
+                //    return false;
+                //}
+
+
+                //browser.Navigate().GoToUrl(webPage);
+                //browser.TextField(Find.ById(Login.ForgotPasswordEmailInputText)).TypeText("123456");
+                //browser.Div(Find.ById("ajaxMessage")).NextSibling.NextSibling.Click();
+                //Thread.Sleep(1000);
+                //if (browser.Div(Find.ById("ajaxMessage")).InnerHtml == null)
+                //{
+                //    message = "Ajax error message not displayed";
+                //    return false;
+                //}
+
+            return result;
+        }
+
+        public static bool TestInexistantLogin(RemoteWebDriver browser, string webPage, out string message)
+        {
+            bool result = true;
+            message = "";
+            browser.Navigate().GoToUrl(webPage);
+                //browser.TextField(Find.ById(Login.UsernameInputText)).TypeText("sssssss");
+                //browser.TextField(Find.ById(Login.PasswordInputText)).TypeText("ppppppppp");
+                //browser.Button(Find.ByClass("formbutton")).Click();
+                //if (browser.Child(Find.ByClass("ErrorMessage")) == null)
+                //{
+                //    message = "Error message not displayed";
+                //    return false;
+                //}
+
+
+                //browser.Navigate().GoToUrl(webPage);
+                //browser.TextField(Find.ById(Login.ForgotPasswordEmailInputText)).TypeText("eeee@eeeeee.com");
+                //browser.Div(Find.ById("ajaxMessage")).NextSibling.NextSibling.Click();
+                //Thread.Sleep(1000);
+                //if (browser.Div(Find.ById("ajaxMessage")).InnerHtml == null)
+                //{
+                //    message = "Ajax error message not displayed";
+                //    return false;
+                //}
+
+            return result;
+        }
+
+
+    
     }
 }

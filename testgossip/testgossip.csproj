@@ -70,6 +70,7 @@
     <Compile Include="Login.cs" />
     <Compile Include="Selenium\Home\HomeChromeTest.cs" />
     <Compile Include="Selenium\Home\HomeSafariTest.cs" />
+    <Compile Include="Selenium\Login\SafariTest.cs" />
     <Compile Include="Selenium\SeleniumChromeUtils.cs" />
     <Compile Include="Selenium\SeleniumSafariUtils.cs" />
     <Compile Include="Selenium\SeleniumFireFoxUtils.cs" />
@@ -86,7 +87,6 @@
     <Folder Include="Selenium\AboutUs\" />
     <Folder Include="Selenium\ContactUs\" />
     <Folder Include="Selenium\FAQ\" />
-    <Folder Include="Selenium\Login\" />
     <Folder Include="Selenium\PrivacyPolicy\" />
     <Folder Include="Selenium\SignUp\" />
     <Folder Include="Selenium\TermsConditions\" />

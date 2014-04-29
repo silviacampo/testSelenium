@@ -68,5 +68,20 @@ namespace testgossip.Selenium
             return result;
         }
 
+
+        public static bool TestEmptyLogin(SafariDriver browser, string webPage, out string message)
+        {
+            bool result = false;
+            browser = new SafariDriver();
+            try
+            {
+                result = SeleniumUtils.TestEmptyLogin(browser, webPage, out message);
+            }
+            finally
+            {
+                browser.Quit();
+            }
+            return result;
+        }
     }
 }

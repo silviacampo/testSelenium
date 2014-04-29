@@ -95,9 +95,9 @@ namespace testgossip
 
 
                 browser.GoTo(webPage);
-                browser.Div(Find.ById("ajaxMessage")).NextSibling.NextSibling.Click();
+                browser.Div(Find.ById(Login.ForgotPasswordAjaxMessageDiv)).NextSibling.NextSibling.Click();
                 Thread.Sleep(1000);
-                if (browser.Div(Find.ById("ajaxMessage")).InnerHtml == null)
+                if (browser.Div(Find.ById(Login.ForgotPasswordAjaxMessageDiv)).InnerHtml == null)
                 {
                     message = "Ajax error message not displayed";
                     return false;
@@ -129,10 +129,10 @@ namespace testgossip
 
 
                 browser.GoTo(webPage);
-                browser.TextField(Find.ById(Login.ForgotPasswordEmailInputText)).TypeText("123456"); 
-                browser.Div(Find.ById("ajaxMessage")).NextSibling.NextSibling.Click();
+                browser.TextField(Find.ById(Login.ForgotPasswordEmailInputText)).TypeText("123456");
+                browser.Div(Find.ById(Login.ForgotPasswordAjaxMessageDiv)).NextSibling.NextSibling.Click();
                 Thread.Sleep(1000);
-                if (browser.Div(Find.ById("ajaxMessage")).InnerHtml == null)
+                if (browser.Div(Find.ById(Login.ForgotPasswordAjaxMessageDiv)).InnerHtml == null)
                 {
                     message = "Ajax error message not displayed";
                     return false;
@@ -165,9 +165,9 @@ namespace testgossip
 
                 browser.GoTo(webPage);
                 browser.TextField(Find.ById(Login.ForgotPasswordEmailInputText)).TypeText("eeee@eeeeee.com");
-                browser.Div(Find.ById("ajaxMessage")).NextSibling.NextSibling.Click();
+                browser.Div(Find.ById(Login.ForgotPasswordAjaxMessageDiv)).NextSibling.NextSibling.Click();
                 Thread.Sleep(1000);
-                if (browser.Div(Find.ById("ajaxMessage")).InnerHtml == null)
+                if (browser.Div(Find.ById(Login.ForgotPasswordAjaxMessageDiv)).InnerHtml == null)
                 {
                     message = "Ajax error message not displayed";
                     return false;
